@@ -16,8 +16,14 @@
 
 package org.springframework.samples.petclinic.system;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 class WelcomeController {
@@ -25,6 +31,23 @@ class WelcomeController {
 	@GetMapping("/")
 	public String welcome() {
 		return "welcome";
+	}
+
+	// @PostMapping("/login")
+	// public String showloginpage(@RequestParam("id") String id, HttpSession session) {
+	// session.setAttribute("username", id);
+	// return "redirect:/login"
+	// }
+
+	@RequestMapping("/login")
+	public String content(HttpServletRequest httpServletRequest, Model model) {
+		String id = httpServletRequest.getParameter("id");
+		String pw = httpServletRequest.getParameter("pw");
+
+		model.addAttribute("id", id);
+		model.addAttribute("pw", pw);
+
+		return "login";
 	}
 
 }
