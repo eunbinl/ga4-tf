@@ -44,8 +44,11 @@ class WelcomeController {
 		String id = httpServletRequest.getParameter("id");
 		String pw = httpServletRequest.getParameter("pw");
 
+		String userid = "'" + id + "'";
+
 		model.addAttribute("id", id);
 		model.addAttribute("pw", pw);
+		model.addAttribute("userid", userid);
 
 		return "login";
 	}
