@@ -2,44 +2,30 @@
 <html th:fragment="layout (template, menu)">
 
 <head>
-<!--  &lt;!&ndash; Google tag (gtag.js) &ndash;&gt;-->
-<!--  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5NPC874ZPZ"></script>-->
-<!--  <script>-->
-<!--    window.dataLayer = window.dataLayer || [];-->
-
-<!--    function gtag() {-->
-<!--      dataLayer.push(arguments);-->
-<!--    }-->
-
-<!--    gtag('js', new Date());-->
-
-<!--    gtag('config', 'G-5NPC874ZPZ');-->
-<!--  </script>-->
 
   <script>
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'userLogin',
+    window.dataLayer.push ({
       'user_id': '[[${id}]]',
-      'level': 'Premium'
+      'event': 'login',
+      'login' : {
+        'method': 'Gmail',
+        'user_id': '[[${id}]]'
+      }
     });
   </script>
 
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
-    w[l] = w[l] || [];
-    w[l].push({
+    w[l] = w[l] || []; w[l].push({
       'gtm.start':
         new Date().getTime(), event: 'gtm.js'
-    });
-    var f = d.getElementsByTagName(s)[0],
-      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-    j.async = true;
-    j.src =
-      'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-    f.parentNode.insertBefore(j, f);
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+      'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
   })(window, document, 'script', 'dataLayer', 'GTM-P77H2ZC');</script>
   <!-- End Google Tag Manager -->
+
   <title>Thank You! - GA Tutorials</title>
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -62,6 +48,11 @@
 </head>
 
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id='GTM-P77H2ZC'" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <nav class="navbar navbar-expand-lg navbar-dark" role="navigation">
   <div class="container-fluid">
